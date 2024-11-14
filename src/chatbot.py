@@ -86,7 +86,7 @@ class ChatBot:
 
 
 # Set up the ChatBot
-API_URL = "http://10.172.1.40:11434/v1/chat/completions"
+API_URL = "http://localhost:11434/v1/chat/completions"
 MODEL = "llama3.2:1b"
 SYSTEM_PROMPT = """You are an AI assistant created to be helpful, harmless, and honest. 
 Respond concisely to the user's queries, providing relevant information without unnecessary details."""

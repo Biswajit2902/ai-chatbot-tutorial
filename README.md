@@ -3,18 +3,25 @@
 This repository contains a tutorial for building an AI-powered chatbot that can retrieve relevant information from documents and generate contextual responses. It combines **Retrieval-Augmented Generation (RAG)** with document embedding and vector database storage to enable the chatbot to answer questions based on specific document content. The system uses ChromaDB for storing embeddings, making it possible to search for and retrieve the most relevant information efficiently.
 
 ## Table of Contents
-- [Introduction](#introduction)
-- [Features](#features)
-- [Requirements](#requirements)
-- [Installation](#installation)
-- [Usage](#usage)
-  - [Setup](#setup)
-  - [Running the Chatbot](#running-the-chatbot)
-- [Classes and Functions](#classes-and-functions)
-- [Detailed Code Explanation](#detailed-code-explanation)
-- [Troubleshooting](#troubleshooting)
-- [Contributing](#contributing)
-- [License](#license)
+- [AI-Powered Chatbot with Document Retrieval and Embedding](#ai-powered-chatbot-with-document-retrieval-and-embedding)
+  - [Table of Contents](#table-of-contents)
+  - [Introduction](#introduction)
+  - [Features](#features)
+  - [Requirements](#requirements)
+  - [Installation](#installation)
+  - [Usage](#usage)
+    - [Setup](#setup)
+    - [Running the Chatbot](#running-the-chatbot)
+  - [Classes and Functions](#classes-and-functions)
+  - [Detailed Code Explanation](#detailed-code-explanation)
+    - [1. ChromaDB Initialization](#1-chromadb-initialization)
+    - [2. Document Processing](#2-document-processing)
+    - [3. Embedding and Storage](#3-embedding-and-storage)
+    - [4. Contextual Response Generation](#4-contextual-response-generation)
+  - [Troubleshooting](#troubleshooting)
+  - [Contributing](#contributing)
+  - [License](#license)
+  - [Disclaimer](#disclaimer)
 
 ## Introduction
 
@@ -111,3 +118,6 @@ Contributions to this project are welcome. If you have any suggestions or would 
 
 This project is licensed under the MIT License. See the LICENSE file for more details.
 
+## Disclaimer
+
+The Documentation is AI generated. It can be partially correct.
