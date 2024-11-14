@@ -1,0 +1,11 @@
+chromadb
+# boto3
+pandas
+langchain
+langchain_community
+unstructured[all-docs]
+python-dotenv
+uvicorn
+fastapi
+langchain-experimental
+langchain-ollama
