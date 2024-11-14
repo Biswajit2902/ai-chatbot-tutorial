@@ -34,7 +34,7 @@ This project serves as an introduction to building AI-powered chatbots that use 
 - **Error Handling**: Includes error handling to manage cases like missing documents or connection failures.
 
 ## Requirements
-- Python 3.8+
+- Python 3.10
 - Libraries:
   - `requests`
   - `json`
