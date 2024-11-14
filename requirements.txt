@@ -1,5 +1,4 @@
 chromadb
-# boto3
 pandas
 langchain
 langchain_community
@@ -9,3 +8,4 @@ uvicorn
 fastapi
 langchain-experimental
 langchain-ollama
+streamlit
