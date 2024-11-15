@@ -10,3 +10,4 @@ langchain-experimental
 langchain-ollama
 streamlit
 jupyter
+onnx==1.16.1
