@@ -1,0 +1,49 @@
+flowchart TD
+    subgraph User["User Interaction"]
+        U[User Input] --> P[Input Preprocessor]
+    end
+
+    subgraph Router["Router & Orchestrator"]
+        P --> RT[Router]
+        RT --> AA[Agent Analyzer]
+        RT --> RA[RAG Analyzer]
+    end
+
+    subgraph RAG["RAG System"]
+        RA --> Q[Query Processor]
+        Q --> V[Vector Database]
+        V --> RET[Retriever]
+        RET --> RC[Context Builder]
+    end
+
+    subgraph Agents["Agent System"]
+        AA --> AT[Agent Task Planner]
+        AT --> AE[Agent Executor]
+        AE --> Tools[Tool Set]
+        Tools --> AE
+    end
+
+    subgraph LLM["Language Model"]
+        RC --> M[Main LLM]
+        AE --> M
+        M --> R[Response Generator]
+    end
+
+    subgraph Output["Response Handler"]
+        R --> Val[Validator]
+        Val --> Resp[Final Response]
+    end
+
+    %% Additional connections
+    Val -- Feedback Loop --> RT
+    V -- Document Store --> RC
+    Tools -- External APIs --> AE
+    
+    %% Styling
+    classDef primary fill:#2374ab,stroke:#333,stroke-width:2px,color:#fff
+    classDef secondary fill:#419d78,stroke:#333,stroke-width:2px,color:#fff
+    classDef tertiary fill:#e09f3e,stroke:#333,stroke-width:2px,color:#fff
+    
+    class U,P,Resp primary
+    class RT,AA,RA,M,R secondary
+    class Q,V,RET,RC,AT,AE,Tools tertiary

@@ -1,0 +1,29 @@
+flowchart TD
+    subgraph Input["User Input"]
+        U[User Query] --> RT[Router]
+    end
+
+    subgraph RAG["RAG Pipeline"]
+        RT --> Q[Query Processor]
+        Q --> V[Vector DB]
+        V --> RC[Context Builder]
+    end
+
+    subgraph Agents["Agent System"]
+        RT --> AT[Agent]
+        AT --> Tools[Tools/APIs]
+        Tools --> AT
+    end
+
+    subgraph Response["Response Generation"]
+        RC --> LLM[Large Language Model]
+        AT --> LLM
+        LLM --> R[Response to User]
+    end
+
+    %% Styling
+    classDef primary fill:#2374ab,stroke:#333,stroke-width:2px,color:#fff
+    classDef secondary fill:#419d78,stroke:#333,stroke-width:2px,color:#fff
+    
+    class U,R primary
+    class RT,LLM,Q,V,RC,AT,Tools secondary

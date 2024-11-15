@@ -1,0 +1,38 @@
+flowchart TD
+    subgraph Input["User Interaction"]
+        U[User Query] --> P[Parser]
+    end
+
+    subgraph AgentSystem["Agent System"]
+        P --> TP[Task Planner]
+        TP --> AG[Agent Coordinator]
+        
+        subgraph Agents["Available Agents"]
+            AG --> A1[Search Agent]
+            AG --> A2[Calculator Agent]
+            AG --> A3[Database Agent]
+            AG --> A4[API Agent]
+        end
+
+        A1 --> T1[Search Tools]
+        A2 --> T2[Math Tools]
+        A3 --> T3[DB Tools]
+        A4 --> T4[API Tools]
+    end
+
+    subgraph Output["Response"]
+        A1 --> LLM[LLM Synthesizer]
+        A2 --> LLM
+        A3 --> LLM
+        A4 --> LLM
+        LLM --> R[Final Response]
+    end
+
+    %% Styling
+    classDef primary fill:#2374ab,stroke:#333,stroke-width:2px,color:#fff
+    classDef secondary fill:#419d78,stroke:#333,stroke-width:2px,color:#fff
+    classDef tools fill:#e09f3e,stroke:#333,stroke-width:2px,color:#fff
+
+    class U,R primary
+    class P,TP,AG,LLM secondary
+    class A1,A2,A3,A4,T1,T2,T3,T4 tools

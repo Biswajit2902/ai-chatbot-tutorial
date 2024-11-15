@@ -1,0 +1,34 @@
+flowchart TD
+    subgraph Input["User Input"]
+        U[User Query] --> QP[Query Processor]
+    end
+
+    subgraph Retrieval["Retrieval System"]
+        QP --> EC[Embedding Creation]
+        EC --> VS[Vector Search]
+        
+        subgraph Storage["Knowledge Base"]
+            DB[(Vector Database)]
+            DOC[Document Store]
+            DB <--> DOC
+        end
+        
+        VS --> DB
+        VS --> RD[Retrieved Documents]
+        RD --> CP[Context Processor]
+    end
+
+    subgraph Generation["Generation"]
+        CP --> PR[Prompt Builder]
+        PR --> LLM[Language Model]
+        LLM --> R[Response to User]
+    end
+
+    %% Styling
+    classDef primary fill:#2374ab,stroke:#333,stroke-width:2px,color:#fff
+    classDef secondary fill:#419d78,stroke:#333,stroke-width:2px,color:#fff
+    classDef storage fill:#e09f3e,stroke:#333,stroke-width:2px,color:#fff
+
+    class U,R primary
+    class QP,EC,VS,RD,CP,PR,LLM secondary
+    class DB,DOC storage
